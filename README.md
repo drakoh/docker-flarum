@@ -19,13 +19,13 @@
 - Lightweight & secure image
 - Based on Alpine Linux 3.16
 - **nginx** and **PHP 8.0**
-- Latest [Flarum Framework](https://github.com/flarum/framework) (v1.3.0)
+- Latest [Flarum Framework](https://github.com/flarum/framework) (v1.8.0)
 - MySQL/Mariadb driver
 - OPCache extension configured
 
 ### Build-time variables
 
-- **VERSION** = Version of [flarum/flarum](https://github.com/flarum/flarum) skeleton (default: *v1.3.0*)
+- **VERSION** = Version of [flarum/flarum](https://github.com/flarum/flarum) skeleton (default: *v1.8.0*)
 
 ### Ports
 
@@ -75,10 +75,10 @@
 
 ```bash
 # Pull from hub.docker.com :
-docker pull mondedie/flarum:latest
+docker pull remicartier/flarum:latest
 
 # or build it manually :
-docker build -t mondedie/flarum:latest https://github.com/mondediefr/docker-flarum.git
+docker build -t remicartier/flarum:latest https://github.com/drakoh/docker-flarum.git
 ```
 
 #### 2 - Docker-compose.yml
@@ -88,7 +88,7 @@ version: "3"
 
 services:
   flarum:
-    image: mondedie/flarum:stable
+    image: mondedie/flarum:latest
     container_name: flarum
     env_file:
       - /mnt/docker/flarum/flarum.env
@@ -118,7 +118,7 @@ services:
 
 You need a reverse proxy to access flarum, this is not described here. You can use the solution of your choice (Traefik, Nginx, Apache, Haproxy, Caddy, H2O...etc).
 
-Create a environment file (see docker-compose: /mnt/docker/flarum/flarum.env [here](https://github.com/mondediefr/docker-flarum/tree/master#2---docker-composeyml))
+Create a environment file (see docker-compose: /mnt/docker/flarum/flarum.env [here](https://github.com/drakoh/docker-flarum/tree/master#2---docker-composeyml))
 
 ```
 # vi /mnt/docker/flarum/flarum.env
